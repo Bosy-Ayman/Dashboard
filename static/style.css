@@ -2,8 +2,8 @@
 #chartdiv_pie {
   position:absolute;
   top: 730px;
-  left: 200px;
-  width: 40%;
+  left: 50px;
+  width: 20%;
   height: 400px;
 }
 #chartdiv_bar{
@@ -29,12 +29,19 @@
   height: 600px;
 }
 
-#chartdiv_line {
+/* #chartdiv_line {
   position:absolute;
-  top: 1120px;
+  top: 720px;
   left: 570px;
   width: 70%;
   height: 600px;
+} */
+#chartdiv_pyramid{
+  position:absolute;
+  top: 730px;
+  left: 510px;
+  width: 30%;
+  height: 400px;
 }
 
 header {

@@ -3,7 +3,7 @@ import sqlite3
 import pandas as pd
 from sqlalchemy import create_engine
 from sqlite3 import Error
-
+from datetime import datetime
 def create_connection(db_file):
     """ create a database connection to a SQLite database """
     conn = None
@@ -117,7 +117,48 @@ def get_barchart3():
     return jsonify(data)
 
 
+@app.route('/get-linechart')
+def get_Linechart():
+    query = """
+    SELECT
+        `Invoice Date` AS `Date`,
+        SUM(REPLACE(REPLACE(`Total Sales`, ',', ''), '$', '')) AS `Total Sales`
+    FROM
+        adidas_data
+    GROUP BY
+        `Date`;
+    """
+    date = pd.read_sql(query, engine)
 
+    # Process the data for the chart
+    classes = date["Date"]
+    values = date["Total Sales"].values
+    data = []
+    for i in range(len(classes)):
+        date_str = classes[i]
+        timestamp = datetime.strptime(date_str, "%m/%d/%Y").timestamp()
+        data.append({"date": int(timestamp * 1000), "value": int(values[i])})
+
+    # Return the data as JSON
+    return jsonify(data)
+
+@app.route('/get-pyramidchart')
+def get_pyramidchart():
+    sales = pd.read_sql("""
+    SELECT
+        Product,
+        count(REPLACE(REPLACE(`Units Sold`, ',', ''), '$', '')) AS `Units Sold`
+    FROM
+        adidas_data
+    GROUP BY
+        Product
+    """, engine)
+    classes = sales["Product"].value_counts().index
+    values2 =sales["Units Sold"].values
+    data = []
+    for i in range(len(classes)):
+            data.append({"class":classes[i],"value":int(values2[i])})
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000)

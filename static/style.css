@@ -1,0 +1,67 @@
+
+#chartdiv_pie {
+  position:absolute;
+  top: 730px;
+  left: 200px;
+  width: 40%;
+  height: 400px;
+}
+#chartdiv_bar{
+  position:absolute;
+  top: 120px;
+  left: 0px;
+  width: 28%;
+  height: 600px;
+
+} 
+ #chartdiv_bar2 {
+  position:absolute;
+  top: 120px;
+  right: 0px;
+  width: 45%;
+  height: 1000px;
+}
+#chartdiv_bar3 {
+  position:absolute;
+  top: 120px;
+  left: 570px;
+  width: 28%;
+  height: 600px;
+}
+
+#chartdiv_line {
+  position:absolute;
+  top: 1120px;
+  left: 570px;
+  width: 70%;
+  height: 600px;
+}
+
+header {
+  
+  display: flex;
+  align-items: center;
+  background-color:black; 
+  padding: 5px; 
+  border-radius: 15px; 
+}
+
+header img {
+  width: 80px; 
+  margin-right: 10px; 
+}
+
+
+h1 {
+  margin: 0; 
+  font-family: 'Arial', sans-serif; 
+  font-size: 40px; 
+  color: #fff; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+}
+h2{
+  color: #333; 
+  font-family: 'Arial', sans-serif; 
+  margin-left: 50px;
+}

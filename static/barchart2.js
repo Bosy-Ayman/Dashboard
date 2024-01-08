@@ -106,27 +106,27 @@ function updateChart2(data_df) {
 
       var range = yAxis.createAxisRange(rangeDataItem);
 
-      rangeDataItem.get("label").setAll({
-        fill: color,
-        text: label,
-        location: 1,
-        fontWeight: "bold",
-        dx: -130
-      });
+      // rangeDataItem.get("label").setAll({
+      //   fill: color,
+      //   text: label,
+      //   location: 1,
+      //   fontWeight: "bold",
+      //   dx: -130
+      // });
 
-      rangeDataItem.get("grid").setAll({
-        stroke: color,
-        strokeOpacity: 1,
-        location: 1
-      });
+      // rangeDataItem.get("grid").setAll({
+      //   stroke: color,
+      //   strokeOpacity: 1,
+      //   location: 1
+      // });
 
-      rangeDataItem.get("tick").setAll({
-        stroke: color,
-        strokeOpacity: 1,
-        location: 1,
-        visible: true,
-        length: 130
-      });
+      // rangeDataItem.get("tick").setAll({
+      //   stroke: color,
+      //   strokeOpacity: 1,
+      //   location: 1,
+      //   visible: true,
+      //   length: 130
+      // });
 
       legendData.push({ name: label, color: color });
     }

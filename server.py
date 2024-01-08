@@ -114,7 +114,7 @@ def get_barchart3():
     data = []
     for i in range(len(classes)):
             data.append({"class":classes[i],"value":int(values2[i])})
-    return jsonify(data)
+    return jsonify(sales)
 
 
 @app.route('/get-linechart')
@@ -155,6 +155,8 @@ def get_pyramidchart():
     """, engine)
     classes = sales["Product"].value_counts().index
     values2 =sales["Units Sold"].values
+    print(classes)
+
     data = []
     for i in range(len(classes)):
             data.append({"class":classes[i],"value":int(values2[i])})
